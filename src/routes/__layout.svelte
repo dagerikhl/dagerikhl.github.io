@@ -1,45 +1,60 @@
 <script lang="ts">
-	import Header from "$lib/header/Header.svelte";
-	import "../app.css";
+	import PageAside from "$lib/components/page-layout/PageAside.svelte";
+	import PageFooter from "$lib/components/page-layout/PageFooter.svelte";
+	import PageHeader from "$lib/components/page-layout/PageHeader.svelte";
+	import "../app.scss";
 </script>
 
-<Header />
+<div class="page">
+	<PageHeader />
 
-<main>
-	<slot />
-</main>
+	<main>
+		<slot />
+	</main>
 
-<footer>
-	<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-</footer>
+	<PageAside />
 
-<style>
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 1024px;
-		margin: 0 auto;
-		box-sizing: border-box;
+	<PageFooter />
+</div>
+
+<style lang="scss">
+	.page {
+		--height-header: 50px;
+		--height-aside: 150px;
+		--height-footer: 200px;
+		--height-main: minmax(calc(100vh - var(--height-header) - var(--height-footer)), auto);
+
+		display: grid;
+		grid-template-columns: 1fr var(--height-aside);
+		grid-template-rows: var(--height-header) var(--height-main) var(--height-footer);
+		grid-template-areas:
+			"header header"
+			"main aside"
+			"footer footer";
+
+		main {
+			grid-area: main;
+			padding: 1rem;
+			box-sizing: border-box;
+		}
 	}
 
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 40px;
-	}
+	@media (max-width: 1080px) {
+		.page {
+			--height-main: minmax(
+				calc(100vh - var(--height-header) - var(--height-aside) - var(--height-footer)),
+				auto
+			);
 
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 40px 0;
+			grid-template-columns: 1fr;
+			grid-template-rows: var(--height-header) var(--height-main) var(--height-aside) var(
+					--height-footer
+				);
+			grid-template-areas:
+				"header"
+				"main"
+				"aside"
+				"footer";
 		}
 	}
 </style>
