@@ -5,7 +5,10 @@
 <nav>
 	<ul>
 		<PageHeaderNavItem path="/" label="Home" />
-		<PageHeaderNavItem path="/about" label="About" />
+		<PageHeaderNavItem path="/cv" label="CV" />
+		<PageHeaderNavItem path="/publications" label="Publications" />
+		<PageHeaderNavItem path="/workshops" label="Workshops" />
+		<!--<PageHeaderNavItem path="/talks" label="Talks" />-->
 	</ul>
 </nav>
 
