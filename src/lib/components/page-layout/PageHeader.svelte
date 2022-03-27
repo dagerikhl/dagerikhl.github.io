@@ -18,7 +18,7 @@
 		grid-template-columns: auto 1fr;
 		grid-template-areas: "avatar nav";
 		background-color: var(--background-color-secondary);
-		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+		box-shadow: var(--shadow-card);
 
 		.avatar {
 			grid-area: avatar;

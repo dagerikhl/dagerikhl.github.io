@@ -123,6 +123,11 @@
   resolved "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.11.tgz"
   integrity sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==
 
+"@types/marked@^4.0.1":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@types/marked/-/marked-4.0.3.tgz#2098f4a77adaba9ce881c9e0b6baf29116e5acc4"
+  integrity sha512-HnMWQkLJEf/PnxZIfbm0yGJRRZYYMhb++O9M36UCTA9z53uPvVoSlAwJr3XOpDEryb7Hwl1qAx/MV6YIW1RXxg==
+
 "@types/node@*":
   version "17.0.23"
   resolved "https://registry.npmjs.org/@types/node/-/node-17.0.23.tgz"
@@ -1324,6 +1329,11 @@ make-dir@^3.0.2:
   dependencies:
     semver "^6.0.0"
 
+marked@^4.0.10:
+  version "4.0.12"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-4.0.12.tgz#2262a4e6fd1afd2f13557726238b69a48b982f7d"
+  integrity sha512-hgibXWrEDNBWgGiK18j/4lkS6ihTe9sxtV4Q1OQppb/0zzyPSzoFANBa5MfsG/zgsWklmNnhm0XACZOH/0HBiQ==
+
 merge-stream@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/merge-stream/-/merge-stream-2.0.0.tgz#52823629a14dd00c9770fb6ad47dc6310f2c1f60"
@@ -1879,6 +1889,14 @@ svelte-hmr@^0.14.11:
   version "0.14.11"
   resolved "https://registry.npmjs.org/svelte-hmr/-/svelte-hmr-0.14.11.tgz"
   integrity sha512-R9CVfX6DXxW1Kn45Jtmx+yUe+sPhrbYSUp7TkzbW0jI5fVPn6lsNG9NEs5dFg5qRhFNAoVdRw5qQDLALNKhwbQ==
+
+svelte-markdown@0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/svelte-markdown/-/svelte-markdown-0.2.2.tgz#fa5d3c0fe6050021747f411842ae10119d231106"
+  integrity sha512-bNxpG3gRbC2UjAFakIMcLEzVq5db2Md57aeU4wKCuffSfD6f7RkvtYDqbrAk2ycC55t3wykOy0E7KDuvVKyDYA==
+  dependencies:
+    "@types/marked" "^4.0.1"
+    marked "^4.0.10"
 
 svelte-preprocess@4.10.4, svelte-preprocess@^4.0.0:
   version "4.10.4"

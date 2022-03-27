@@ -39,7 +39,7 @@
 		}
 	}
 
-	@media (max-width: 1080px) {
+	@media screen and (max-width: 1080px) {
 		.page {
 			--height-main: minmax(
 				calc(100vh - var(--height-header) - var(--height-aside) - var(--height-footer)),
