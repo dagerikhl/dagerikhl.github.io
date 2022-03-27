@@ -7,7 +7,7 @@
 </script>
 
 <li class:active={$page.url.pathname === path}>
-	<a sveltekit:prefetch={prefetch} href={path}>{label ?? path}</a>
+	<a sveltekit:prefetch={prefetch ? true : undefined} href={path}>{label ?? path}</a>
 </li>
 
 <style lang="scss">
