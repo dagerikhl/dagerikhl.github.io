@@ -1,16 +1,22 @@
 <script lang="ts">
 	import PageAside from "$lib/components/page-layout/PageAside.svelte";
+	import PageBackground from "$lib/components/page-layout/PageBackground/PageBackground.svelte";
 	import PageFooter from "$lib/components/page-layout/PageFooter.svelte";
 	import PageHeader from "$lib/components/page-layout/PageHeader.svelte";
+	import PageMain from "$lib/components/page-layout/PageMain.svelte";
 	import "../app.scss";
 </script>
 
 <div class="page">
 	<PageHeader />
 
-	<main>
+	<div class="background">
+		<PageBackground />
+	</div>
+
+	<PageMain>
 		<slot />
-	</main>
+	</PageMain>
 
 	<PageAside />
 
@@ -32,10 +38,9 @@
 			"main aside"
 			"footer footer";
 
-		main {
-			grid-area: main;
-			padding: 1rem;
-			box-sizing: border-box;
+		.background {
+			grid-column: 1 / 3;
+			grid-row: 2 / 3;
 		}
 	}
 
@@ -55,6 +60,11 @@
 				"main"
 				"aside"
 				"footer";
+
+			.background {
+				grid-column: 1 / 2;
+				grid-row: 2 / 4;
+			}
 		}
 	}
 </style>
