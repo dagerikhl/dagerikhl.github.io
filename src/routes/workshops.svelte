@@ -45,7 +45,7 @@ chat.
 
 We hope you find this interesting, and can’t wait to see you!
 
-\- Alexander Castillo and Dag Erik Løvgren.
+\\\\- Alexander Castillo and Dag Erik Løvgren.
 
 - Primarily for: Developers.
 - Participant requirements: A computer with Git, Node 16+, and Npm/Yarn installed. Some experience
