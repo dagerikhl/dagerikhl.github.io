@@ -8,6 +8,7 @@
 		<PageHeaderNavItem path="/cv" label="CV" />
 		<PageHeaderNavItem path="/publications" label="Publications" />
 		<PageHeaderNavItem path="/workshops" label="Workshops" />
+		<PageHeaderNavItem path="/projects" label="Projects" />
 		<!--<PageHeaderNavItem path="/talks" label="Talks" />-->
 	</ul>
 </nav>
