@@ -11,8 +11,8 @@
 	const SUN_CONFIG: SunProps = { interval: INTERVAL };
 	const STAR_CONFIGS: StarProps[] = [
 		{ interval: INTERVAL, color: "#ffffff" },
-		{ interval: INTERVAL, color: "#d7f3fa" },
-		{ interval: INTERVAL, color: "#ffceab" },
+		{ interval: INTERVAL, color: "#ffffff" },
+		{ interval: INTERVAL, color: "#ffffff" },
 	];
 	const BLACK_HOLE_CONFIG: BlackHoleProps = { interval: INTERVAL / 2 };
 </script>
