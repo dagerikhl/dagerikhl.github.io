@@ -11,8 +11,7 @@
 	const PERSON_DAG_ERIK: Person = {
 		name: "Dag Erik Løvgren",
 		homepage: "https://dagerikhl.github.io/",
-		image:
-			"https://raw.githubusercontent.com/dagerikhl/avatars/master/Bahia%20Feliz/DagErik_250x250.png",
+		image: "https://raw.githubusercontent.com/dagerikhl/avatars/master/Miles/DagErik.png",
 	};
 	const WORKSHOPS: IWorkshop[] = [
 		{
