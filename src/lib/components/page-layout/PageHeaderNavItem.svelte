@@ -15,9 +15,7 @@
 		position: relative;
 		height: 100%;
 
-		&.active::before {
-			--size: 6px;
-
+		&::before {
 			content: "";
 			position: absolute;
 			top: 0;
@@ -26,6 +24,19 @@
 			width: 0;
 			border: var(--size) solid transparent;
 			border-top: var(--size) solid var(--text-color-accent);
+			transition: border-top-width 180ms ease-in-out;
+		}
+
+		&.active {
+			--size: 8px;
+		}
+
+		&:not(.active):hover {
+			--size: 6px;
+
+			a {
+				color: var(--text-color-accent);
+			}
 		}
 
 		a {
@@ -38,10 +49,6 @@
 			letter-spacing: 0.1em;
 			text-decoration: none;
 			transition: color 200ms linear;
-
-			&:hover {
-				color: var(--text-color-accent);
-			}
 		}
 	}
 </style>
