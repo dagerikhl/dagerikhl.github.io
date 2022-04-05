@@ -26,7 +26,7 @@
 <style lang="scss">
 	.page {
 		--height-header: 50px;
-		--height-aside: 150px;
+		--height-aside: 220px;
 		--height-footer: 200px;
 		--height-main: minmax(calc(100vh - var(--height-header) - var(--height-footer)), auto);
 

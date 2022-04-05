@@ -7,7 +7,9 @@
 </svelte:head>
 
 <section>
-	<h1>dagerikhl</h1>
+	<h1>Dag Erik Løvgren / dagerikhl</h1>
 
-	<p>Content to be announced, stay tuned!</p>
+	<p>Welcome to my homepage!</p>
+
+	<p><em>Page is still a work in progress, content will be added continually.</em></p>
 </section>
