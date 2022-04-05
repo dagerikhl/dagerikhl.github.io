@@ -23,7 +23,7 @@
 					image: "https://avatars.githubusercontent.com/u/15246162?v=4",
 				},
 			],
-			url: "https://github.com/miles-no/booster2022-gather-your-party-with-svelte",
+			links: ["https://github.com/miles-no/booster2022-gather-your-party-with-svelte"],
 			abstract: `\
 In this workshop we will take you through the basic concepts of Svelte. We’ll do this by making our
 own Character Creator! If you’re not familiar with the concept, a character creator is a tool for

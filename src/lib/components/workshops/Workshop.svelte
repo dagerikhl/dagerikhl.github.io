@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { slide } from "svelte/transition";
-	import SvelteMarkdown from "svelte-markdown";
+	import Link from "$lib/components/design/links/Link.svelte";
 	import EventPerformancePreview from "$lib/components/event-performances/EventPerformancePreview.svelte";
+	import Markdown from "$lib/components/markdown/Markdown.svelte";
 	import PersonPreview from "$lib/components/persons/PersonPreview.svelte";
 	import type { IWorkshop } from "$lib/models/IWorkshop";
 
@@ -11,10 +12,14 @@
 <div class="workshop" in:slide>
 	<h2>{workshop.name}</h2>
 
-	<a href={workshop.url} target="_blank">{workshop.url}</a>
+	{#if workshop.links}
+		{#each workshop.links as link}
+			<Link {link} target="_blank" />
+		{/each}
+	{/if}
 
 	<p class="abstract">
-		<SvelteMarkdown source={workshop.abstract} />
+		<Markdown source={workshop.abstract} />
 	</p>
 
 	{#if workshop.performances}
