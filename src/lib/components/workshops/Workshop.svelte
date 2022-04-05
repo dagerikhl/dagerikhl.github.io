@@ -13,9 +13,11 @@
 	<h2>{workshop.name}</h2>
 
 	{#if workshop.links}
-		{#each workshop.links as link}
-			<Link {link} target="_blank" />
-		{/each}
+		<div class="links">
+			{#each workshop.links as link}
+				<Link {link} target="_blank" />
+			{/each}
+		</div>
 	{/if}
 
 	<p class="abstract">
@@ -48,7 +50,7 @@
 		grid-template-rows: repeat(4, auto);
 		grid-template-areas:
 			"heading authors"
-			"link authors"
+			"links authors"
 			"abstract authors"
 			"performances authors";
 		background-color: var(--background-color-secondary);
@@ -62,8 +64,11 @@
 			margin-bottom: 0;
 		}
 
-		a {
-			grid-area: link;
+		.links {
+			grid-area: links;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
 		}
 
 		.abstract {

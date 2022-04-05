@@ -19,6 +19,7 @@
 		grid-template-areas: "avatar nav";
 		background-color: var(--background-color-secondary);
 		box-shadow: var(--shadow-card);
+		z-index: 1000;
 
 		.avatar {
 			grid-area: avatar;

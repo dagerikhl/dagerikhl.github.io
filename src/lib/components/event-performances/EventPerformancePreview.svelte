@@ -8,7 +8,7 @@
 {#if performance}
 	<div class="performance">
 		<h4>
-			{performance.name}{#if performance.event}@{performance.event}{/if}
+			{performance.name}{#if performance.event}&nbsp;@&nbsp;{performance.event}{/if}
 		</h4>
 
 		{#if performance.location}

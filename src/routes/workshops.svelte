@@ -5,18 +5,20 @@
 <script lang="ts">
 	import Workshop from "$lib/components/workshops/Workshop.svelte";
 	import type { IWorkshop } from "$lib/models/IWorkshop";
+	import type { Person } from "$lib/types/Person";
 
 	// TODO Should this be managed by a CMS?
+	const PERSON_DAG_ERIK: Person = {
+		name: "Dag Erik Løvgren",
+		homepage: "https://dagerikhl.github.io/",
+		image:
+			"https://raw.githubusercontent.com/dagerikhl/avatars/master/Bahia%20Feliz/DagErik_250x250.png",
+	};
 	const WORKSHOPS: IWorkshop[] = [
 		{
 			name: "Gather your Party with Svelte",
 			authors: [
-				{
-					name: "Dag Erik Løvgren",
-					homepage: "https://dagerikhl.github.io/",
-					image:
-						"https://raw.githubusercontent.com/dagerikhl/avatars/master/Bahia%20Feliz/DagErik_250x250.png",
-				},
+				PERSON_DAG_ERIK,
 				{
 					name: "Alexander Castillo",
 					homepage: "https://github.com/palexcast",
@@ -58,6 +60,38 @@ We hope you find this interesting, and can’t wait to see you!
 					event: "BoosterConf 2022",
 					location: "Radisson Blu Royal Hotel Bryggen, Bergen, Norway",
 					time: { from: new Date(2022, 3 - 1, 24, 9, 0), to: new Date(2022, 3 - 1, 24, 12, 15) },
+				},
+			],
+		},
+		{
+			name: "Gather your Party and Learn a New Technology",
+			authors: [PERSON_DAG_ERIK],
+			links: [
+				"https://github.com/dagerikhl/miles-fagdag01-gypalant-case-svelte",
+				"https://github.com/dagerikhl/miles-fagdag01-gypalant-case-go",
+			],
+			abstract: `\
+Using a full day to explore and learn a new technology, either through free exploration, or through
+a predefined starter with a case attached.
+
+The workshop is split into two technologies: Svelte and Go(lang).
+
+For Svelte, the case is to create a character creator, and incidentally was the inspiration for the
+"Gather your Party with Svelte" workshop above.
+
+For Go, two starter cases are given: a completely blank slate for making anything you want, and an
+API-starter for making some kind of API with Go.
+
+The cases are described in more detail in the Git repositories.
+
+_Note: The workshop descriptions in the Git repositories are in Norwegian._
+`,
+			performances: [
+				{
+					name: "Gather your Party and Learn a New Technology",
+					event: "Miles Subject Day #1",
+					location: "Miles Bergen, Norway",
+					time: { from: new Date(2021, 10 - 1, 8, 8, 0), to: new Date(2021, 10 - 1, 8, 16, 0) },
 				},
 			],
 		},
