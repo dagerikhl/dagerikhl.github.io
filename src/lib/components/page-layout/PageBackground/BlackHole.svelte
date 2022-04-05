@@ -49,8 +49,8 @@ transform: translate(${x}px, ${y}px) scale(${$scaleStore});\
 
 			const newScale = rollResult(
 				[
-					{ chance: 0.1, result: 1 + Math.random() },
-					{ chance: 0.9, result: 0 },
+					{ chance: 0.05, result: 1 + Math.random() },
+					{ chance: 0.95, result: 0 },
 				],
 				0,
 			);
