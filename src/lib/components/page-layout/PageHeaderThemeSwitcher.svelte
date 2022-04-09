@@ -1,7 +1,9 @@
 <script lang="ts">
 	import themeStore, { setTheme } from "svelte-themes";
+	import { ICONS } from "$lib/constants/ICONS";
 	import { THEMES } from "$lib/constants/style/THEMES";
 	import Switch from "$lib/components/design/inputs/Switch.svelte";
+	import Icon from "$lib/components/design/icons/Icon.svelte";
 	import type { SwitchChangeEventProps } from "$lib/components/design/inputs/SwitchProps";
 
 	// TODO Verify that this initial value works on systems with light system theme
@@ -17,11 +19,10 @@
 </script>
 
 <label class="switcher">
-	Dark mode
+	<Icon icon={ICONS.faMoon} />
+
 	<Switch checked={isDarkTheme} on:change={handleChangeTheme} />
 </label>
-<Switch checked={false} />
-<Switch checked={true} />
 
 <style lang="scss">
 	.switcher {

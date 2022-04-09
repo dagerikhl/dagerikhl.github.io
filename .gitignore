@@ -13,3 +13,6 @@ node_modules
 # Editors
 .idea/
 .vscode/
+
+# Logs
+yarn-error.log
