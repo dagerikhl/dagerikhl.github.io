@@ -28,6 +28,8 @@
 			grid-area: avatar;
 			height: 48px;
 			width: 48px;
+			padding: 0.25rem;
+			box-sizing: border-box;
 		}
 	}
 </style>
