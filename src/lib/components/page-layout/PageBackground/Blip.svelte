@@ -79,7 +79,7 @@ transform: translate(${x}px, ${y}px) scale(${$scaleStore});\
 		height: var(--size);
 		width: var(--size);
 		border-radius: 100%;
-		opacity: 0.6;
+		opacity: 1;
 		background-color: var(--color);
 		box-shadow: 0 0 5px 3px rgba(255, 255, 255, 0.3);
 	}

@@ -60,7 +60,7 @@ transform: scale(${$scaleStore});\
 		height: var(--size);
 		width: var(--size);
 		border-radius: 100%;
-		opacity: 0.5;
+		opacity: 1;
 		background-color: var(--color);
 		box-shadow: 0 0 80px 40px var(--color);
 	}

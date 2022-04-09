@@ -32,7 +32,7 @@
 		align-items: center;
 		padding: 1rem;
 		background-color: var(--background-color-tertiary);
-		color: var(--text-color-secondary);
+		color: var(--text-color-tertiary);
 	}
 
 	.copyright {
@@ -47,7 +47,7 @@
 		gap: 0.5rem;
 
 		:global(a) {
-			color: var(--text-color-secondary);
+			color: var(--text-color-tertiary);
 		}
 	}
 </style>

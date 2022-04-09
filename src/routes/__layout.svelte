@@ -1,4 +1,5 @@
 <script lang="ts">
+	import SvelteTheme from "svelte-themes/SvelteTheme.svelte";
 	import PageAside from "$lib/components/page-layout/PageAside.svelte";
 	import PageBackground from "$lib/components/page-layout/PageBackground/PageBackground.svelte";
 	import PageFooter from "$lib/components/page-layout/PageFooter.svelte";
@@ -6,6 +7,8 @@
 	import PageMain from "$lib/components/page-layout/PageMain.svelte";
 	import "../app.scss";
 </script>
+
+<SvelteTheme />
 
 <div class="page">
 	<PageHeader />

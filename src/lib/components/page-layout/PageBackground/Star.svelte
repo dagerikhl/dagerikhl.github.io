@@ -93,7 +93,7 @@ transform: translate(${x}px, ${y}px) scale(${$scaleStore});\
 		height: var(--size);
 		width: var(--size);
 		border-radius: 100%;
-		opacity: 0.8;
+		opacity: 1;
 		background-color: var(--color);
 		box-shadow: 0 0 30px 20px var(--color);
 		overflow: visible;

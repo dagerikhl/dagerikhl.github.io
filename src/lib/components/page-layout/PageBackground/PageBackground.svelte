@@ -41,5 +41,6 @@
 		z-index: -1;
 		overflow: hidden;
 		pointer-events: none;
+		opacity: 0.7;
 	}
 </style>
