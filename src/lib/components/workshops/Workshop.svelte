@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { slide } from "svelte/transition";
+	import Card from "$lib/components/design/cards/Card.svelte";
 	import Link from "$lib/components/design/links/Link.svelte";
 	import EventPerformancePreview from "$lib/components/event-performances/EventPerformancePreview.svelte";
 	import Markdown from "$lib/components/markdown/Markdown.svelte";
@@ -9,39 +10,41 @@
 	export let workshop: IWorkshop;
 </script>
 
-<div class="workshop" in:slide>
-	<h2>{workshop.name}</h2>
+<Card>
+	<div class="workshop" in:slide>
+		<h2>{workshop.name}</h2>
 
-	{#if workshop.links}
-		<div class="links">
-			{#each workshop.links as link}
-				<Link {link} target="_blank" />
+		{#if workshop.links}
+			<div class="links">
+				{#each workshop.links as link}
+					<Link {link} target="_blank" />
+				{/each}
+			</div>
+		{/if}
+
+		<p class="abstract">
+			<Markdown source={workshop.abstract} />
+		</p>
+
+		{#if workshop.performances}
+			<div class="performances">
+				<h3>Event Performances</h3>
+
+				{#each workshop.performances as performance (performance.name)}
+					<EventPerformancePreview {performance} />
+				{/each}
+			</div>
+		{/if}
+
+		<div class="authors">
+			<h3>Authors</h3>
+
+			{#each workshop.authors as author (author.name)}
+				<PersonPreview person={author} />
 			{/each}
 		</div>
-	{/if}
-
-	<p class="abstract">
-		<Markdown source={workshop.abstract} />
-	</p>
-
-	{#if workshop.performances}
-		<div class="performances">
-			<h3>Event Performances</h3>
-
-			{#each workshop.performances as performance (performance.name)}
-				<EventPerformancePreview {performance} />
-			{/each}
-		</div>
-	{/if}
-
-	<div class="authors">
-		<h3>Authors</h3>
-
-		{#each workshop.authors as author (author.name)}
-			<PersonPreview person={author} />
-		{/each}
 	</div>
-</div>
+</Card>
 
 <style lang="scss">
 	.workshop {
@@ -53,10 +56,6 @@
 			"links authors"
 			"abstract authors"
 			"performances authors";
-		background-color: var(--background-color-secondary);
-		box-shadow: var(--shadow-card);
-		border-radius: 4px;
-		padding: 1rem;
 		gap: 1rem;
 
 		h2 {
