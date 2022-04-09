@@ -11,6 +11,8 @@
 	import { degToRad } from "$lib/utils/maths";
 
 	export let interval: number;
+	export let minDistance = 150;
+	export let maxDistance = 700;
 
 	interface Config {
 		angle: TweenedConfig<number>;
@@ -18,13 +20,11 @@
 		scale: TweenedConfig<number>;
 	}
 
-	const MIN_DISTANCE = 150;
-	const MAX_DISTANCE = 700;
 	const HORIZONTAL_DISTANCE_FACTOR = 1.2;
 
 	const CONFIG: Config = {
 		angle: createConfigParameter(Math.random() * 360, interval),
-		distance: createConfigParameter(MIN_DISTANCE, interval),
+		distance: createConfigParameter(minDistance, interval),
 		scale: createConfigParameter(0, interval),
 	};
 
@@ -47,7 +47,7 @@ transform: translate(${x}px, ${y}px) scale(${$scaleStore});\
 
 			angleStore.update((angle) => getOffsetAngle(angle), options);
 
-			distanceStore.set(MIN_DISTANCE + Math.random() * (MAX_DISTANCE - MIN_DISTANCE), options);
+			distanceStore.set(minDistance + Math.random() * (maxDistance - minDistance), options);
 
 			const newScale = rollResult(
 				[
@@ -79,8 +79,8 @@ transform: translate(${x}px, ${y}px) scale(${$scaleStore});\
 		height: var(--size);
 		width: var(--size);
 		border-radius: 100%;
-		opacity: 0.3;
+		opacity: 0.6;
 		background-color: var(--color);
-		box-shadow: 0 0 5px 3px var(--color);
+		box-shadow: 0 0 5px 3px rgba(255, 255, 255, 0.3);
 	}
 </style>

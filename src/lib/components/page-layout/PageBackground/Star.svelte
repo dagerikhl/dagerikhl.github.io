@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { onDestroy, onMount } from "svelte";
+	import Blip from "$lib/components/page-layout/PageBackground/Blip.svelte";
+	import type { BlipProps } from "$lib/components/page-layout/PageBackground/BlipProps";
 	import {
 		createConfigParameter,
 		createConfigParameterOptions,
@@ -12,6 +14,7 @@
 
 	export let interval: number;
 	export let color: string;
+	export let blipsCount = 10;
 
 	interface Config {
 		angle: TweenedConfig<number>;
@@ -39,6 +42,11 @@
 \
 transform: translate(${x}px, ${y}px) scale(${$scaleStore});\
 `;
+
+	const BLIPS_CONFIG: { count: number; props: BlipProps } = {
+		count: blipsCount,
+		props: { interval: interval / 2, minDistance: 10, maxDistance: 100 },
+	};
 
 	let motionInterval: NodeJS.Timer;
 
@@ -69,7 +77,11 @@ transform: translate(${x}px, ${y}px) scale(${$scaleStore});\
 	});
 </script>
 
-<div class="star" {style} />
+<div class="star" {style}>
+	{#each Array(BLIPS_CONFIG.count).fill(BLIPS_CONFIG) as { props: { interval, minDistance, maxDistance } }}
+		<Blip {interval} {minDistance} {maxDistance} />
+	{/each}
+</div>
 
 <style lang="scss">
 	.star {
@@ -84,5 +96,6 @@ transform: translate(${x}px, ${y}px) scale(${$scaleStore});\
 		opacity: 0.8;
 		background-color: var(--color);
 		box-shadow: 0 0 30px 20px var(--color);
+		overflow: visible;
 	}
 </style>
