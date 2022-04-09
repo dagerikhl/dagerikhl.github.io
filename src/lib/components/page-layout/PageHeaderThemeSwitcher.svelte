@@ -1,24 +1,31 @@
 <script lang="ts">
-	import themeStore from "svelte-themes";
+	// TODO Make into a prettier toggle button
+
+	import themeStore, { setTheme } from "svelte-themes";
 	import { THEMES } from "$lib/constants/style/THEMES";
-	import type { Theme } from "$lib/types/style/Theme";
 
-	interface ThemeOption {
-		name: string;
-		value: Theme;
-	}
+	// TODO Verify that this initial value works on systems with light system theme
+	$: isDarkTheme = $themeStore.theme === THEMES.Dark;
 
-	const themes: ThemeOption[] = Object.entries(THEMES).map(([name, value]) => ({ name, value }));
+	const handleChangeTheme = ({ target }) => {
+		if (target.checked) {
+			setTheme(THEMES.Dark);
+		} else {
+			setTheme(THEMES.Light);
+		}
+	};
 </script>
 
-<select bind:value={$themeStore.theme}>
-	{#each themes as theme (theme.value)}
-		<option value={theme.value}>{theme.name}</option>
-	{/each}
-</select>
+<label class="switcher">
+	Dark mode
+	<input type="checkbox" checked={isDarkTheme} on:change={handleChangeTheme} />
+</label>
 
 <style lang="scss">
 	.switcher {
 		grid-area: theme;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
 	}
 </style>
