@@ -30,7 +30,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
-		border-left: 1px solid #000000;
+		border-left: 1px solid var(--color-border-primary);
 		padding-left: 0.5rem;
 
 		h4 {
