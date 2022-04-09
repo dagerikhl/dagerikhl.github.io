@@ -23,7 +23,7 @@
 			height: 0;
 			width: 0;
 			border: var(--size) solid transparent;
-			border-top: var(--size) solid var(--text-color-accent);
+			border-top: var(--size) solid var(--color-accent);
 			transition: border-top-width 180ms ease-in-out;
 		}
 
@@ -35,7 +35,7 @@
 			--size: 6px;
 
 			a {
-				color: var(--text-color-accent);
+				color: var(--color-accent);
 			}
 		}
 

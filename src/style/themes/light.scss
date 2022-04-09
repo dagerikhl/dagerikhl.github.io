@@ -1,11 +1,19 @@
 :root {
+	--color-black: #000000;
+	--color-white: #ffffff;
+
 	--background-color-primary: #e5e8ec;
 	--background-color-secondary: #dfe4e7;
 	--background-color-tertiary: #3b5162;
+
 	--text-color-primary: #222222;
 	--text-color-secondary: #000000;
-	--text-color-tertiary: #e1e1e1;
+	--text-color-tertiary: #ffffff;
 	--text-color-heading: #000000;
-	--text-color-accent: #0075c7;
+
+	--color-border-primary: #ffffff;
+
+	--color-accent: #0075c7;
+
 	--shadow-card: 0 1px 4px 2px rgba(0, 0, 0, 0.1);
 }
