@@ -3,7 +3,7 @@
 	// Props and prop types taken directly from FA from svelte-fa
 
 	import type { IconDefinition } from "@fortawesome/free-regular-svg-icons";
-	import Fa from "svelte-fa/src/fa.svelte";
+	import Fa from "svelte-fa";
 
 	export let className: string = undefined;
 	export let id: string = undefined;
@@ -68,5 +68,3 @@
 	{secondaryOpacity}
 	{swapOpacity}
 />
-
-<style lang="scss"></style>
