@@ -9,8 +9,8 @@
 	export let id: string;
 	export let checked: boolean;
 
-	const handleChange = ({ target }: { target: HTMLInputElement }) => {
-		dispatch("change", { checked: target.checked });
+	const handleChange = ({ target }: Event) => {
+		dispatch("change", { checked: (target as HTMLInputElement).checked });
 	};
 </script>
 
