@@ -1,13 +1,18 @@
 <script lang="ts">
 	import themeStore, { setTheme } from "svelte-themes";
+	import { browser } from "$app/env";
 	import { ICONS } from "$lib/constants/ICONS";
 	import { THEMES } from "$lib/constants/style/THEMES";
 	import Switch from "$lib/components/design/inputs/Switch.svelte";
 	import Icon from "$lib/components/design/icons/Icon.svelte";
 	import type { SwitchChangeEventProps } from "$lib/components/design/inputs/SwitchProps";
 
-	// TODO Verify that this initial value works on systems with light system theme
-	$: isDarkTheme = $themeStore.theme === THEMES.Dark;
+	$: userPrefersDarkMode =
+		browser && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+	$: isDarkTheme =
+		!$themeStore.theme || $themeStore.theme === THEMES.System
+			? userPrefersDarkMode
+			: $themeStore.theme === THEMES.Dark;
 
 	const handleChangeTheme = ({ detail: { checked } }: CustomEvent<SwitchChangeEventProps>) => {
 		if (checked) {
