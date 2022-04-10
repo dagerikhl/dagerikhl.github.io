@@ -18,10 +18,10 @@
 	};
 </script>
 
-<label class="switcher">
+<label class="switcher" for="theme-switcher">
 	<Icon icon={ICONS.faMoon} />
 
-	<Switch checked={isDarkTheme} on:change={handleChangeTheme} />
+	<Switch id="theme-switcher" checked={isDarkTheme} on:change={handleChangeTheme} />
 </label>
 
 <style lang="scss">

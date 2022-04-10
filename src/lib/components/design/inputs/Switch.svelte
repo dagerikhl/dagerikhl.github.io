@@ -6,6 +6,7 @@
 
 	const dispatch = createEventDispatcher<{ change: SwitchChangeEventProps }>();
 
+	export let id: string;
 	export let checked: boolean;
 
 	const handleChange = ({ target }: { target: HTMLInputElement }) => {
@@ -14,7 +15,7 @@
 </script>
 
 <div class="switch">
-	<input type="checkbox" bind:checked on:change={handleChange} />
+	<input {id} type="checkbox" bind:checked on:change={handleChange} />
 	<span class="slider" />
 </div>
 
