@@ -9,16 +9,16 @@
 
 	$: userPrefersDarkMode =
 		browser && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-	$: isDarkTheme =
+	$: isLightTheme =
 		!$themeStore.theme || $themeStore.theme === THEMES.System
-			? userPrefersDarkMode
-			: $themeStore.theme === THEMES.Dark;
+			? !userPrefersDarkMode
+			: $themeStore.theme === THEMES.Light;
 
 	const handleChangeTheme = ({ detail: { checked } }: CustomEvent<SwitchChangeEventProps>) => {
 		if (checked) {
-			setTheme(THEMES.Dark);
-		} else {
 			setTheme(THEMES.Light);
+		} else {
+			setTheme(THEMES.Dark);
 		}
 	};
 </script>
@@ -26,7 +26,7 @@
 <label class="switcher" for="theme-switcher">
 	<Icon icon={ICONS.faMoon} />
 
-	<Switch id="theme-switcher" checked={isDarkTheme} on:change={handleChangeTheme} />
+	<Switch id="theme-switcher" checked={isLightTheme} on:change={handleChangeTheme} />
 </label>
 
 <style lang="scss">
