@@ -4,32 +4,39 @@
 	import EventPerformancePreview from "$lib/components/event-performances/EventPerformancePreview.svelte";
 	import Markdown from "$lib/components/markdown/Markdown.svelte";
 	import PersonPreview from "$lib/components/persons/PersonPreview.svelte";
-	import type { IWorkshop } from "$lib/models/IWorkshop";
+	import type { IPublication } from "$lib/models/IPublication";
 
-	export let workshop: IWorkshop;
+	export let publication: IPublication;
 </script>
 
 <Card>
-	<div class="workshop">
-		<h2>{workshop.name}</h2>
+	<div class="publication">
+		<h2>{publication.name}</h2>
 
-		{#if workshop.links}
+		{#if publication.type || publication.date}
+			<h3 class="subheading">
+				{publication.type ?? ""}
+				{#if publication.date}{publication.date.getFullYear()}{/if}
+			</h3>
+		{/if}
+
+		{#if publication.links}
 			<div class="links">
-				{#each workshop.links as link}
+				{#each publication.links as link}
 					<Link {link} target="_blank" />
 				{/each}
 			</div>
 		{/if}
 
 		<p class="abstract">
-			<Markdown source={workshop.abstract} />
+			<Markdown source={publication.abstract} />
 		</p>
 
-		{#if workshop.performances}
+		{#if publication.performances}
 			<div class="performances">
 				<h3>Event Performances</h3>
 
-				{#each workshop.performances as performance (performance.name)}
+				{#each publication.performances as performance (performance.name)}
 					<EventPerformancePreview {performance} />
 				{/each}
 			</div>
@@ -38,7 +45,7 @@
 		<div class="authors">
 			<h3>Authors</h3>
 
-			{#each workshop.authors as author (author.name)}
+			{#each publication.authors as author (author.name)}
 				<PersonPreview person={author} />
 			{/each}
 		</div>
@@ -46,12 +53,13 @@
 </Card>
 
 <style lang="scss">
-	.workshop {
+	.publication {
 		display: grid;
 		grid-template-columns: 1fr auto;
 		grid-template-rows: repeat(4, auto);
 		grid-template-areas:
 			"heading authors"
+			"subheading authors"
 			"links authors"
 			"abstract authors"
 			"performances authors";
@@ -60,6 +68,10 @@
 		h2 {
 			grid-area: heading;
 			margin-bottom: 0;
+		}
+
+		.subheading {
+			grid-area: subheading;
 		}
 
 		.links {
@@ -95,11 +107,12 @@
 	}
 
 	@media screen and (max-width: 1080px) {
-		.workshop {
+		.publication {
 			grid-template-columns: 1fr;
 			grid-template-rows: repeat(5, auto);
 			grid-template-areas:
 				"heading"
+				"subheading"
 				"links"
 				"authors"
 				"abstract"

@@ -3,16 +3,12 @@
 </script>
 
 <script lang="ts">
+	import { slide } from "svelte/transition";
 	import Workshop from "$lib/components/workshops/Workshop.svelte";
+	import { PERSON_DAG_ERIK } from "$lib/constants/persons";
 	import type { IWorkshop } from "$lib/models/IWorkshop";
-	import type { Person } from "$lib/types/Person";
 
 	// TODO Should this be managed by a CMS?
-	const PERSON_DAG_ERIK: Person = {
-		name: "Dag Erik Løvgren",
-		homepage: "https://dagerikhl.github.io/",
-		image: "https://raw.githubusercontent.com/dagerikhl/avatars/master/Miles/DagErik.png",
-	};
 	const WORKSHOPS: IWorkshop[] = [
 		{
 			name: "Gather your Party with Svelte",
@@ -104,7 +100,7 @@ _Note: The workshop descriptions in the Git repositories are in Norwegian._
 <section>
 	<h1>Workshops</h1>
 
-	<div class="workshops">
+	<div class="workshops" in:slide>
 		{#each WORKSHOPS as workshop (workshop.name)}
 			<Workshop {workshop} />
 		{/each}
