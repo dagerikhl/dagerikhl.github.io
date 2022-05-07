@@ -100,7 +100,7 @@
 			grid-template-rows: repeat(5, auto);
 			grid-template-areas:
 				"heading"
-				"link"
+				"links"
 				"authors"
 				"abstract"
 				"performances";
