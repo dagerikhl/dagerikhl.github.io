@@ -6,7 +6,7 @@
 
 	export let link: Link;
 	export let target: "_blank" | "_self" | "_parent" | "_top" | "framename";
-	export let title: string;
+	export let title: string = undefined;
 
 	$: isExternal = target === "_blank";
 	$: displayTitle = title ?? (target === "_blank" ? "Opens in a new tab" : undefined);
