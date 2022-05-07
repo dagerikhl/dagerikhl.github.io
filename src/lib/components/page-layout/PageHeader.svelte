@@ -37,6 +37,7 @@
 			img {
 				height: 100%;
 				object-fit: contain;
+				filter: grayscale(1) brightness(1.2) contrast(2);
 			}
 		}
 	}
