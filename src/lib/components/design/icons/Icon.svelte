@@ -1,6 +1,8 @@
 <script lang="ts">
-	// May Exchange FA and/or svelte-fa for another icon library in future, therefore this component
-	// Props and prop types taken directly from FA from svelte-fa
+	/*
+	 May Exchange FA and/or svelte-fa for another icon library in the future, hence this component.
+	 Props and prop types taken directly from FA from svelte-fa.
+	 */
 
 	import type { IconDefinition } from "@fortawesome/free-regular-svg-icons";
 	import Fa from "svelte-fa";

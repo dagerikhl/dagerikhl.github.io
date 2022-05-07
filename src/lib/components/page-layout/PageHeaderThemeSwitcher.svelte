@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { faMoon } from "@fortawesome/free-regular-svg-icons";
 	import themeStore, { setTheme } from "svelte-themes";
 	import { browser } from "$app/env";
-	import { ICONS } from "$lib/constants/ICONS";
 	import { THEMES } from "$lib/constants/style/THEMES";
 	import Switch from "$lib/components/design/inputs/Switch.svelte";
 	import Icon from "$lib/components/design/icons/Icon.svelte";
@@ -24,7 +24,7 @@
 </script>
 
 <label class="switcher" for="theme-switcher">
-	<Icon icon={ICONS.faMoon} />
+	<Icon icon={faMoon} />
 
 	<Switch id="theme-switcher" checked={isLightTheme} on:change={handleChangeTheme} />
 </label>
