@@ -14,7 +14,7 @@
 
 	export let interval: number;
 	export let color: string;
-	export let blipsCount = 10;
+	export let blipsCount = 5;
 
 	interface Config {
 		angle: TweenedConfig<number>;

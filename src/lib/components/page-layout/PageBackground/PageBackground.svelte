@@ -15,7 +15,7 @@
 		{ interval: INTERVAL, color: "#ffffff" },
 		{ interval: INTERVAL, color: "#ffffff" },
 	];
-	const BLIPS_CONFIG = { count: 100, interval: INTERVAL * 2 };
+	const BLIPS_CONFIG = { count: 20, interval: INTERVAL * 2 };
 	const BLACK_HOLE_CONFIG: BlackHoleProps = { interval: INTERVAL / 2 };
 </script>
 
