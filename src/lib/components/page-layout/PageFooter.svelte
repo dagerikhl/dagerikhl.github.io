@@ -1,9 +1,11 @@
 <script>
+	import { faCopyright } from "@fortawesome/free-regular-svg-icons";
+	import Icon from "$lib/components/design/icons/Icon.svelte";
 	import Link from "$lib/components/design/links/Link.svelte";
 </script>
 
 <footer>
-	<div class="copyright">&copy; Dag Erik Løvgren 2022 –</div>
+	<div class="copyright"><Icon icon={faCopyright} size="sm" /> Dag Erik Løvgren 2022 –</div>
 
 	<div class="links">
 		<Link
