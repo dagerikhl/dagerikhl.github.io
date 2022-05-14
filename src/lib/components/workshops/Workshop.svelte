@@ -11,7 +11,7 @@
 
 <Card>
 	<div class="workshop">
-		<h2>{workshop.name}</h2>
+		<h2 class="heading">{workshop.name}</h2>
 
 		{#if workshop.links}
 			<div class="links">
@@ -58,8 +58,11 @@
 		gap: 1rem;
 
 		h2 {
-			grid-area: heading;
 			margin-bottom: 0;
+		}
+
+		.heading {
+			grid-area: heading;
 		}
 
 		.links {
@@ -100,8 +103,8 @@
 			grid-template-rows: repeat(5, auto);
 			grid-template-areas:
 				"heading"
-				"links"
 				"authors"
+				"links"
 				"abstract"
 				"performances";
 

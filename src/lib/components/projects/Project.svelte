@@ -3,38 +3,43 @@
 	import Link from "$lib/components/design/links/Link.svelte";
 	import Markdown from "$lib/components/markdown/Markdown.svelte";
 	import PersonPreview from "$lib/components/persons/PersonPreview.svelte";
-	import type { IPublication } from "$lib/models/IPublication";
+	import type { IProject } from "$lib/models/IProject";
 
-	export let publication: IPublication;
+	export let project: IProject;
 </script>
 
 <Card>
-	<div class="publication">
-		<h2 class="heading">{publication.name}</h2>
+	<div class="project">
+		<h2 class="heading">{project.name}</h2>
 
-		{#if publication.type || publication.date}
+		{#if project.homepage}
+			<h2 class="homepage">
+				<Link link={project.homepage} target="_blank" />
+			</h2>
+		{/if}
+
+		{#if project.type}
 			<h3 class="subheading">
-				{publication.type ?? ""}
-				{#if publication.date}{publication.date.getFullYear()}{/if}
+				{project.type}
 			</h3>
 		{/if}
 
-		{#if publication.links}
+		{#if project.links}
 			<div class="links">
-				{#each publication.links as link}
+				{#each project.links as link}
 					<Link {link} target="_blank" />
 				{/each}
 			</div>
 		{/if}
 
 		<div class="abstract">
-			<Markdown source={publication.abstract} />
+			<Markdown source={project.abstract} />
 		</div>
 
 		<div class="authors">
 			<h3>Authors</h3>
 
-			{#each publication.authors as author (author.name)}
+			{#each project.authors as author (author.name)}
 				<PersonPreview person={author} />
 			{/each}
 		</div>
@@ -42,15 +47,15 @@
 </Card>
 
 <style lang="scss">
-	.publication {
+	.project {
 		display: grid;
-		grid-template-columns: 1fr auto;
+		grid-template-columns: 1fr auto auto;
 		grid-template-rows: repeat(4, auto);
 		grid-template-areas:
-			"heading authors"
-			"subheading authors"
-			"links authors"
-			"abstract authors";
+			"heading homepage homepage"
+			"subheading subheading authors"
+			"links links authors"
+			"abstract abstract authors";
 		gap: 1rem;
 
 		h2,
@@ -60,6 +65,10 @@
 
 		.heading {
 			grid-area: heading;
+		}
+
+		.homepage {
+			grid-area: homepage;
 		}
 
 		.subheading {
@@ -88,11 +97,12 @@
 	}
 
 	@media screen and (max-width: 1080px) {
-		.publication {
+		.project {
 			grid-template-columns: 1fr;
-			grid-template-rows: repeat(5, auto);
+			grid-template-rows: repeat(6, auto);
 			grid-template-areas:
 				"heading"
+				"homepage"
 				"subheading"
 				"authors"
 				"links"
