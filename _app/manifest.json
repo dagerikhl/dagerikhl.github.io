@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-9b8713cb.js",
+    "file": "start-623e0182.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -28,7 +28,7 @@
       "_Link-14c17530.js"
     ],
     "css": [
-      "assets/pages/__layout.svelte-98e5b13d.css"
+      "assets/pages/__layout.svelte-18ce16cb.css"
     ],
     "assets": [
       "assets/dagerikhl-8748f656.png",
@@ -69,40 +69,47 @@
     ]
   },
   "src/routes/projects.svelte": {
-    "file": "pages/projects.svelte-1f275849.js",
+    "file": "pages/projects.svelte-fb0475dd.js",
     "src": "src/routes/projects.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-eb587bf4.js"
+      "_index-eb587bf4.js",
+      "_persons-0a367ae1.js",
+      "_Link-14c17530.js"
+    ],
+    "css": [
+      "assets/pages/projects.svelte-3a2cb60a.css"
     ]
   },
   "src/routes/publications.svelte": {
-    "file": "pages/publications.svelte-6b947ac0.js",
+    "file": "pages/publications.svelte-f1b1dc46.js",
     "src": "src/routes/publications.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-eb587bf4.js",
-      "_persons-c5255f92.js",
+      "_persons-0a367ae1.js",
+      "_dayjs.min-4cbc2ca3.js",
       "_Link-14c17530.js"
     ],
     "css": [
-      "assets/pages/publications.svelte-335db776.css"
+      "assets/pages/publications.svelte-74a2a6cb.css"
     ]
   },
   "src/routes/workshops.svelte": {
-    "file": "pages/workshops.svelte-1814f1c2.js",
+    "file": "pages/workshops.svelte-9a99a6d1.js",
     "src": "src/routes/workshops.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-eb587bf4.js",
-      "_persons-c5255f92.js",
-      "_Link-14c17530.js"
+      "_persons-0a367ae1.js",
+      "_Link-14c17530.js",
+      "_dayjs.min-4cbc2ca3.js"
     ],
     "css": [
-      "assets/pages/workshops.svelte-19f160af.css"
+      "assets/pages/workshops.svelte-cbc1ac03.css"
     ]
   },
   "_index-eb587bf4.js": {
@@ -123,14 +130,17 @@
       "assets/Link-ed64c0e7.css"
     ]
   },
-  "_persons-c5255f92.js": {
-    "file": "chunks/persons-c5255f92.js",
+  "_persons-0a367ae1.js": {
+    "file": "chunks/persons-0a367ae1.js",
     "imports": [
       "_Link-14c17530.js",
       "_index-eb587bf4.js"
     ],
     "css": [
-      "assets/persons-3f56f15b.css"
+      "assets/persons-be600762.css"
     ]
+  },
+  "_dayjs.min-4cbc2ca3.js": {
+    "file": "chunks/dayjs.min-4cbc2ca3.js"
   }
 }
