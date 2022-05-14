@@ -21,9 +21,9 @@
 			</div>
 		{/if}
 
-		<p class="abstract">
+		<div class="abstract">
 			<Markdown source={workshop.abstract} />
-		</p>
+		</div>
 
 		{#if workshop.performances}
 			<div class="performances">
