@@ -1,4 +1,5 @@
 <script lang="ts">
+	import dayjs from "dayjs";
 	import Card from "$lib/components/design/cards/Card.svelte";
 	import Link from "$lib/components/design/links/Link.svelte";
 	import Markdown from "$lib/components/markdown/Markdown.svelte";
@@ -15,7 +16,7 @@
 		{#if publication.type || publication.date}
 			<h3 class="subheading">
 				{publication.type ?? ""}
-				{#if publication.date}{publication.date.getFullYear()}{/if}
+				{#if publication.date}{dayjs(publication.date).year()}{/if}
 			</h3>
 		{/if}
 

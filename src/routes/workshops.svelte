@@ -54,7 +54,10 @@ We hope you find this interesting, and can’t wait to see you!
 					name: "Gather your Party with Svelte",
 					event: "BoosterConf 2022",
 					location: "Radisson Blu Royal Hotel Bryggen, Bergen, Norway",
-					time: { from: new Date(2022, 3 - 1, 24, 9, 0), to: new Date(2022, 3 - 1, 24, 12, 15) },
+					time: {
+						from: new Date(2022, 3 - 1, 24, 9, 0).valueOf(),
+						to: new Date(2022, 3 - 1, 24, 12, 15).valueOf(),
+					},
 				},
 			],
 		},
@@ -86,7 +89,10 @@ _Note: The workshop descriptions in the Git repositories are in Norwegian._
 					name: "Gather your Party and Learn a New Technology",
 					event: "Miles Subject Day #1",
 					location: "Miles Bergen, Norway",
-					time: { from: new Date(2021, 10 - 1, 8, 8, 0), to: new Date(2021, 10 - 1, 8, 16, 0) },
+					time: {
+						from: new Date(2021, 10 - 1, 8, 8, 0).valueOf(),
+						to: new Date(2021, 10 - 1, 8, 16, 0).valueOf(),
+					},
 				},
 			],
 		},

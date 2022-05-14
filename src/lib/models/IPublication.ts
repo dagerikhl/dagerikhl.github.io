@@ -4,7 +4,7 @@ import type { Person } from "../types/Person";
 export interface IPublication {
 	name: string;
 	type?: string;
-	date?: Date;
+	date?: number;
 	authors: Person[];
 	links?: Link[];
 	abstract?: string;

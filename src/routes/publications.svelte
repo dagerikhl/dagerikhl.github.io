@@ -20,7 +20,7 @@
 				"https://github.com/dagerikhl/ddsg-server",
 			],
 			type: "Master Thesis",
-			date: new Date(2019, 7 - 1, 3),
+			date: new Date(2019, 7 - 1, 3).valueOf(),
 			abstract: `\
 Many universities have started to educate students on how to develop secure software and systems. One challenge of teaching information security is that the curriculum can easily be outdated, because new attacks and mitigation approaches arise.
 

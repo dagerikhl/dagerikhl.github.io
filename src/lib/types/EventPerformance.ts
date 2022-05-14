@@ -3,7 +3,7 @@ export interface EventPerformance {
 	event?: string;
 	location?: string;
 	time?: {
-		from: Date;
-		to?: Date;
+		from: number;
+		to?: number;
 	};
 }

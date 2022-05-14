@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { EventPerformance } from "$lib/types/EventPerformance";
-	import { formatDateOrDatetime } from "$lib/utils/formatting/dates";
+	import { formatDate } from "$lib/utils/formatting/dates";
 
 	export let performance: EventPerformance;
 </script>
@@ -17,8 +17,10 @@
 
 		{#if performance.time}
 			<div>
-				When: {formatDateOrDatetime(performance.time.from)}{#if performance.time.to}
-					&nbsp;–&nbsp;{formatDateOrDatetime(performance.time.to)}
+				When: {formatDate(performance.time.from, {
+					showTime: true,
+				})}{#if performance.time.to}
+					&nbsp;–&nbsp;{formatDate(performance.time.to, { showTime: true })}
 				{/if}
 			</div>
 		{/if}
