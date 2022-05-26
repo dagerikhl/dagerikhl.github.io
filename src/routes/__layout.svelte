@@ -2,6 +2,7 @@
 	import SvelteTheme from "svelte-themes/SvelteTheme.svelte";
 	import PageAside from "$lib/components/page-layout/PageAside.svelte";
 	import PageBackground from "$lib/components/page-layout/PageBackground/PageBackground.svelte";
+	import PageBorders from "$lib/components/page-layout/PageBorders/PageBorders.svelte";
 	import PageFooter from "$lib/components/page-layout/PageFooter.svelte";
 	import PageHeader from "$lib/components/page-layout/PageHeader.svelte";
 	import PageMain from "$lib/components/page-layout/PageMain.svelte";
@@ -15,6 +16,10 @@
 
 	<div class="background">
 		<PageBackground />
+	</div>
+
+	<div class="borders">
+		<PageBorders />
 	</div>
 
 	<PageMain>
@@ -33,6 +38,7 @@
 		--height-footer: 200px;
 		--height-main: minmax(calc(100vh - var(--height-header) - var(--height-footer)), auto);
 
+		position: relative;
 		display: grid;
 		grid-template-columns: 1fr var(--height-aside);
 		grid-template-rows: var(--height-header) var(--height-main) var(--height-footer);
@@ -41,7 +47,8 @@
 			"main aside"
 			"footer footer";
 
-		.background {
+		.background,
+		.borders {
 			grid-column: 1 / 3;
 			grid-row: 2 / 3;
 		}
@@ -64,7 +71,8 @@
 				"aside"
 				"footer";
 
-			.background {
+			.background,
+			.borders {
 				grid-column: 1 / 2;
 				grid-row: 2 / 4;
 			}

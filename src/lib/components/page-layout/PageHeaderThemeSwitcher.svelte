@@ -1,18 +1,13 @@
 <script lang="ts">
 	import { faMoon } from "@fortawesome/free-regular-svg-icons";
 	import themeStore, { setTheme } from "svelte-themes";
-	import { browser } from "$app/env";
 	import { THEMES } from "$lib/constants/style/THEMES";
 	import Switch from "$lib/components/design/inputs/Switch.svelte";
 	import Icon from "$lib/components/design/icons/Icon.svelte";
 	import type { SwitchChangeEventProps } from "$lib/components/design/inputs/SwitchProps";
+	import { checkIsLightTheme } from "$lib/utils/theme";
 
-	$: userPrefersDarkMode =
-		browser && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-	$: isLightTheme =
-		!$themeStore.theme || $themeStore.theme === THEMES.System
-			? !userPrefersDarkMode
-			: $themeStore.theme === THEMES.Light;
+	$: isLightTheme = checkIsLightTheme($themeStore.theme);
 
 	const handleChangeTheme = ({ detail: { checked } }: CustomEvent<SwitchChangeEventProps>) => {
 		if (checked) {
