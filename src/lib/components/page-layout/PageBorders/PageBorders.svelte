@@ -14,10 +14,12 @@
 {/if}
 
 <style lang="scss">
+	@use "sass:math";
+
 	$imageHeight: 300px;
 	$imageWidth: 150px;
 	$borderWidth: max($imageWidth, 20vw);
-	$borderSlice: $imageWidth / 1px;
+	$borderSlice: math.div($imageWidth, 1px);
 
 	.border {
 		position: absolute;

@@ -12,8 +12,8 @@
 	$: displayTitle = title ?? (target === "_blank" ? "Opens in a new tab" : undefined);
 </script>
 
-<a href={getLinkUrl(link)} {target} {title}
-	><slot>{getLinkLabel(link)}</slot>{#if target === "_blank"}&nbsp;<Icon
+<a href={getLinkUrl(link)} {target} title={displayTitle}
+	><slot>{getLinkLabel(link)}</slot>{#if isExternal}&nbsp;<Icon
 			icon={faExternalLink}
 			size="sm"
 		/>{/if}</a
