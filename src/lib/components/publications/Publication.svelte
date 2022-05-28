@@ -43,6 +43,8 @@
 </Card>
 
 <style lang="scss">
+	@import "../src/lib/style/variables";
+
 	.publication {
 		display: grid;
 		grid-template-columns: 1fr auto;
@@ -88,7 +90,7 @@
 		}
 	}
 
-	@media screen and (max-width: 1080px) {
+	@media screen and (max-width: $screenBig) {
 		.publication {
 			grid-template-columns: 1fr;
 			grid-template-rows: repeat(5, auto);

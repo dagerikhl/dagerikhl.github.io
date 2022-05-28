@@ -1,7 +1,6 @@
-//noinspection CssUnknownTarget
 @import "@fontsource/fira-mono";
-@import "./style/themes/dark";
-@import "./style/themes/light";
+@import "$lib/style/themes/dark";
+@import "$lib/style/themes/light";
 
 :root {
 	font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell,

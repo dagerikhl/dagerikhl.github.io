@@ -46,6 +46,8 @@
 </Card>
 
 <style lang="scss">
+	@import "../src/lib/style/variables";
+
 	.workshop {
 		display: grid;
 		grid-template-columns: 1fr auto;
@@ -97,7 +99,7 @@
 		}
 	}
 
-	@media screen and (max-width: 1080px) {
+	@media screen and (max-width: $screenBig) {
 		.workshop {
 			grid-template-columns: 1fr;
 			grid-template-rows: repeat(5, auto);
