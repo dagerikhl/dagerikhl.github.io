@@ -46,7 +46,7 @@
 </Card>
 
 <style lang="scss">
-	@import "../src/lib/style/variables";
+	@import "../../style/variables/screen";
 
 	.workshop {
 		display: grid;

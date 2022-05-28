@@ -28,11 +28,13 @@
 
 <style lang="scss">
 	footer {
+		--padding: 1rem;
+
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		align-items: center;
-		height: 100%;
-		padding: 1rem;
+		height: calc(100% - var(--padding) * 2);
+		padding: var(--padding);
 		background-color: var(--background-color-tertiary);
 		color: var(--text-color-tertiary);
 	}

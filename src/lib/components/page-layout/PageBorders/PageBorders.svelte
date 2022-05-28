@@ -27,23 +27,23 @@
 <style lang="scss">
 	@use "sass:math";
 
-	$imageWidth: 350px;
-	$borderWidth: max(50px, 6vw);
-	$borderSlice: math.div($imageWidth, 1px);
-	$borderOffset: $imageWidth * (math.div(-1, 50));
+	@import "../src/lib/style/variables/layout";
+
+	$slice: math.div($borderWidth, 1px);
 
 	.border {
-		position: fixed;
-		top: var(--height-header);
-		right: $borderOffset;
+		position: absolute;
+		top: 0;
+		right: 0;
 		bottom: 0;
-		left: $borderOffset;
-		border: $borderWidth solid;
+		left: 0;
+		border: $borderContentWidth solid;
+		pointer-events: none;
 	}
 
 	.right {
-		border-image-slice: 0 $borderSlice 0 0;
-		border-image-width: 0 $borderWidth 0 0;
+		border-image-slice: 0 $slice 0 0;
+		border-image-width: 0 $borderContentWidth 0 0;
 
 		&.light {
 			border-image-source: url("$lib/assets/images/tree-layout/right-light.png");
@@ -54,8 +54,8 @@
 	}
 
 	.left {
-		border-image-slice: 0 0 0 $borderSlice;
-		border-image-width: 0 0 0 $borderWidth;
+		border-image-slice: 0 0 0 $slice;
+		border-image-width: 0 0 0 $borderContentWidth;
 
 		&.light {
 			border-image-source: url("$lib/assets/images/tree-layout/left-light.png");

@@ -38,18 +38,14 @@
 </div>
 
 <style lang="scss">
-	@import "../src/lib/style/variables";
+	@import "../lib/style/variables/layout";
+	@import "../lib/style/variables/screen";
 
 	.page {
-		--height-header: 50px;
-		--height-aside: 220px;
-		--height-footer: 200px;
-		--height-main: minmax(calc(100vh - var(--height-header) - var(--height-footer)), auto);
-
 		position: relative;
 		display: grid;
-		grid-template-columns: 1fr var(--height-aside);
-		grid-template-rows: var(--height-header) var(--height-main) var(--height-footer);
+		grid-template-columns: 1fr var(--aside-size);
+		grid-template-rows: var(--header-height) var(--main-height) var(--footer-height);
 		grid-template-areas:
 			"header header"
 			"main aside"
@@ -85,13 +81,8 @@
 
 	@media screen and (max-width: $screenBig) {
 		.page {
-			--height-main: minmax(
-				calc(100vh - var(--height-header) - var(--height-aside) - var(--height-footer)),
-				auto
-			);
-
 			grid-template-columns: 1fr;
-			grid-template-rows: var(--height-header) var(--height-main) var(--height-aside) var(
+			grid-template-rows: var(--header-height) var(--main-height) var(--aside-size) var(
 					--height-footer
 				);
 			grid-template-areas:
