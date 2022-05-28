@@ -1,11 +1,11 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-30b12b0d.js",
+    "file": "start-20efcebc.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
-      "_index-cec58f6c.js",
-      "_index-6e17f935.js"
+      "_index-da547f29.js",
+      "_index-d889790d.js"
     ],
     "dynamicImports": [
       "src/routes/__layout.svelte",
@@ -18,17 +18,17 @@
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-d451ca61.js",
+    "file": "pages/__layout.svelte-5c7bd7ba.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-cec58f6c.js",
-      "_index-6e17f935.js",
-      "_Link-599837a7.js"
+      "_index-da547f29.js",
+      "_index-d889790d.js",
+      "_Link-5e3556e0.js"
     ],
     "css": [
-      "assets/pages/__layout.svelte-9aaa4c48.css"
+      "assets/pages/__layout.svelte-879af8d0.css"
     ],
     "assets": [
       "assets/dagerikhl-8748f656.png",
@@ -46,99 +46,99 @@
     ]
   },
   ".svelte-kit/runtime/components/error.svelte": {
-    "file": "error.svelte-3e902f65.js",
+    "file": "error.svelte-0464acbe.js",
     "src": ".svelte-kit/runtime/components/error.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-cec58f6c.js"
+      "_index-da547f29.js"
     ]
   },
   "src/routes/cv.svelte": {
-    "file": "pages/cv.svelte-22ef3206.js",
+    "file": "pages/cv.svelte-b68a04c6.js",
     "src": "src/routes/cv.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-cec58f6c.js"
+      "_index-da547f29.js"
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-9b65f539.js",
+    "file": "pages/index.svelte-99d4cab1.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-cec58f6c.js"
+      "_index-da547f29.js"
     ]
   },
   "src/routes/projects.svelte": {
-    "file": "pages/projects.svelte-e2c6f58c.js",
+    "file": "pages/projects.svelte-5e909777.js",
     "src": "src/routes/projects.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-cec58f6c.js",
-      "_persons-f2dc8e86.js",
-      "_Link-599837a7.js"
+      "_index-da547f29.js",
+      "_Link-5e3556e0.js",
+      "_persons-a5592f39.js"
     ],
     "css": [
       "assets/pages/projects.svelte-3a2cb60a.css"
     ]
   },
   "src/routes/publications.svelte": {
-    "file": "pages/publications.svelte-5baced43.js",
+    "file": "pages/publications.svelte-3fe71fa9.js",
     "src": "src/routes/publications.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-cec58f6c.js",
-      "_persons-f2dc8e86.js",
+      "_index-da547f29.js",
+      "_Link-5e3556e0.js",
       "_dayjs.min-4cbc2ca3.js",
-      "_Link-599837a7.js"
+      "_persons-a5592f39.js"
     ],
     "css": [
       "assets/pages/publications.svelte-74a2a6cb.css"
     ]
   },
   "src/routes/workshops.svelte": {
-    "file": "pages/workshops.svelte-70f78c1e.js",
+    "file": "pages/workshops.svelte-8d76c3aa.js",
     "src": "src/routes/workshops.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-cec58f6c.js",
-      "_persons-f2dc8e86.js",
-      "_Link-599837a7.js",
+      "_index-da547f29.js",
+      "_Link-5e3556e0.js",
+      "_persons-a5592f39.js",
       "_dayjs.min-4cbc2ca3.js"
     ],
     "css": [
       "assets/pages/workshops.svelte-cbc1ac03.css"
     ]
   },
-  "_index-cec58f6c.js": {
-    "file": "chunks/index-cec58f6c.js"
+  "_index-da547f29.js": {
+    "file": "chunks/index-da547f29.js"
   },
-  "_index-6e17f935.js": {
-    "file": "chunks/index-6e17f935.js",
+  "_index-d889790d.js": {
+    "file": "chunks/index-d889790d.js",
     "imports": [
-      "_index-cec58f6c.js"
+      "_index-da547f29.js"
     ]
   },
-  "_Link-599837a7.js": {
-    "file": "chunks/Link-599837a7.js",
+  "_Link-5e3556e0.js": {
+    "file": "chunks/Link-5e3556e0.js",
     "imports": [
-      "_index-cec58f6c.js"
+      "_index-da547f29.js"
     ],
     "css": [
       "assets/Link-ed64c0e7.css"
     ]
   },
-  "_persons-f2dc8e86.js": {
-    "file": "chunks/persons-f2dc8e86.js",
+  "_persons-a5592f39.js": {
+    "file": "chunks/persons-a5592f39.js",
     "imports": [
-      "_Link-599837a7.js",
-      "_index-cec58f6c.js"
+      "_index-da547f29.js",
+      "_Link-5e3556e0.js"
     ],
     "css": [
       "assets/persons-be600762.css"
