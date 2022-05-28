@@ -12,7 +12,7 @@
 	@use "sass:math";
 
 	$imageWidth: 350px;
-	$borderWidth: max(50px, 5vw);
+	$borderWidth: max(50px, 6vw);
 	$borderSlice: math.div($imageWidth, 1px);
 	$borderOffset: $imageWidth * (math.div(-1, 50));
 

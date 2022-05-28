@@ -73,6 +73,7 @@
 		}
 		.aside {
 			grid-area: aside;
+			z-index: 40;
 		}
 		.footer {
 			grid-area: footer;
