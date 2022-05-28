@@ -8,5 +8,9 @@ export const checkIsLightTheme = (theme?: string): boolean => {
 	const isSystemTheme = theme === THEMES.System;
 	const isLightTheme = theme === THEMES.Light;
 
-	return isMissingTheme || isSystemTheme ? !isDarkModePreferred : isLightTheme;
+	if (isMissingTheme || isSystemTheme) {
+		return !isDarkModePreferred;
+	}
+
+	return isLightTheme;
 };

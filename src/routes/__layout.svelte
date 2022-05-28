@@ -98,8 +98,6 @@
 				"aside"
 				"footer";
 
-			.header {
-			}
 			.background {
 				grid-column: 1 / 2;
 				grid-row: 2 / 4;
@@ -107,12 +105,6 @@
 			.borders {
 				grid-column: 1 / 2;
 				grid-row: 2 / 4;
-			}
-			.main {
-			}
-			.aside {
-			}
-			.footer {
 			}
 		}
 	}

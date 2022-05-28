@@ -1,12 +1,28 @@
 <script lang="ts">
+	import { fly } from "svelte/transition";
 	import themeStore from "svelte-themes";
+	import { getIsMountedStore } from "$lib/utils/lifecycle/mounting";
 	import { checkIsLightTheme } from "$lib/utils/theme";
 
 	$: isLightTheme = checkIsLightTheme($themeStore.theme);
+
+	const isMounted = getIsMountedStore();
 </script>
 
-<div class="border right" class:light={isLightTheme} class:dark={!isLightTheme} />
-<div class="border left" class:light={isLightTheme} class:dark={!isLightTheme} />
+{#if $isMounted}
+	<div
+		class="border right"
+		class:light={isLightTheme}
+		class:dark={!isLightTheme}
+		in:fly={{ x: 200, duration: 3000 }}
+	/>
+	<div
+		class="border left"
+		class:light={isLightTheme}
+		class:dark={!isLightTheme}
+		in:fly={{ x: -200, duration: 3000 }}
+	/>
+{/if}
 
 <style lang="scss">
 	@use "sass:math";

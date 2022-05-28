@@ -1,7 +1,7 @@
 <script lang="ts">
 	// Note: A controlled input component
 
-	import { createEventDispatcher, onMount } from "svelte";
+	import { createEventDispatcher } from "svelte";
 	import type { SwitchChangeEventProps } from "./SwitchProps";
 
 	const dispatch = createEventDispatcher<{ change: SwitchChangeEventProps }>();
@@ -12,23 +12,11 @@
 	const handleChange = ({ target }: Event) => {
 		dispatch("change", { checked: (target as HTMLInputElement).checked });
 	};
-
-	// Prevents initial transition of slider position when initially unchecked
-	let isReady = false;
-	onMount(() => {
-		const readyTimeout = setTimeout(() => {
-			isReady = true;
-		}, 100);
-
-		return () => {
-			clearTimeout(readyTimeout);
-		};
-	});
 </script>
 
 <div class="switch">
 	<input {id} type="checkbox" bind:checked on:change={handleChange} />
-	<span class="slider" class:ready={isReady} />
+	<span class="slider" />
 </div>
 
 <style lang="scss">
@@ -75,8 +63,8 @@
 			border-radius: var(--height);
 			cursor: pointer;
 
-			&.ready,
-			&.ready::before {
+			&,
+			&::before {
 				transition: transform 400ms;
 			}
 
