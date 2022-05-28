@@ -5,46 +5,47 @@
 	$: isLightTheme = checkIsLightTheme($themeStore.theme);
 </script>
 
-<div class="border right" />
-<div class="border left" />
-
-{#if isLightTheme}
-	<div class="border right light-theme-overlay" />
-	<div class="border left light-theme-overlay" />
-{/if}
+<div class="border right" class:light={isLightTheme} class:dark={!isLightTheme} />
+<div class="border left" class:light={isLightTheme} class:dark={!isLightTheme} />
 
 <style lang="scss">
 	@use "sass:math";
 
-	$imageHeight: 300px;
-	$imageWidth: 150px;
-	$borderWidth: max($imageWidth, 20vw);
+	$imageWidth: 350px;
+	$borderWidth: max(50px, 5vw);
 	$borderSlice: math.div($imageWidth, 1px);
+	$borderOffset: $imageWidth * (math.div(-1, 50));
 
 	.border {
-		position: absolute;
+		position: fixed;
 		top: var(--height-header);
-		right: 0;
-		bottom: var(--height-footer);
-		left: 0;
+		right: $borderOffset;
+		bottom: 0;
+		left: $borderOffset;
 		border: $borderWidth solid;
-		z-index: -1;
-		filter: var(--border-filter);
 	}
 
 	.right {
-		border-image-source: url("$lib/assets/images/tree-layout/right.png");
 		border-image-slice: 0 $borderSlice 0 0;
 		border-image-width: 0 $borderWidth 0 0;
+
+		&.light {
+			border-image-source: url("$lib/assets/images/tree-layout/right-light.png");
+		}
+		&.dark {
+			border-image-source: url("$lib/assets/images/tree-layout/right-dark.png");
+		}
 	}
 
 	.left {
-		border-image-source: url("$lib/assets/images/tree-layout/left.png");
 		border-image-slice: 0 0 0 $borderSlice;
 		border-image-width: 0 0 0 $borderWidth;
-	}
 
-	.light-theme-overlay {
-		filter: saturate(0) brightness(10000%) opacity(70%);
+		&.light {
+			border-image-source: url("$lib/assets/images/tree-layout/left-light.png");
+		}
+		&.dark {
+			border-image-source: url("$lib/assets/images/tree-layout/left-dark.png");
+		}
 	}
 </style>

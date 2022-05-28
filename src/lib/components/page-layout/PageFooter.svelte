@@ -28,10 +28,10 @@
 
 <style lang="scss">
 	footer {
-		grid-area: footer;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		align-items: center;
+		height: 100%;
 		padding: 1rem;
 		background-color: var(--background-color-tertiary);
 		color: var(--text-color-tertiary);

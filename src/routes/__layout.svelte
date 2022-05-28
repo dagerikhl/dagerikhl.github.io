@@ -12,7 +12,9 @@
 <SvelteTheme />
 
 <div class="page">
-	<PageHeader />
+	<div class="header">
+		<PageHeader />
+	</div>
 
 	<div class="background">
 		<PageBackground />
@@ -22,13 +24,17 @@
 		<PageBorders />
 	</div>
 
-	<PageMain>
-		<slot />
-	</PageMain>
+	<div class="main">
+		<PageMain><slot /></PageMain>
+	</div>
 
-	<PageAside />
+	<div class="aside">
+		<PageAside />
+	</div>
 
-	<PageFooter />
+	<div class="footer">
+		<PageFooter />
+	</div>
 </div>
 
 <style lang="scss">
@@ -47,10 +53,30 @@
 			"main aside"
 			"footer footer";
 
-		.background,
+		.header {
+			grid-area: header;
+			z-index: 20;
+		}
+		.background {
+			grid-column: 1 / 3;
+			grid-row: 2 / 3;
+			z-index: 10;
+		}
 		.borders {
 			grid-column: 1 / 3;
 			grid-row: 2 / 3;
+			z-index: 30;
+		}
+		.main {
+			grid-area: main;
+			z-index: 40;
+		}
+		.aside {
+			grid-area: aside;
+		}
+		.footer {
+			grid-area: footer;
+			z-index: 50;
 		}
 	}
 
@@ -71,10 +97,21 @@
 				"aside"
 				"footer";
 
-			.background,
+			.header {
+			}
+			.background {
+				grid-column: 1 / 2;
+				grid-row: 2 / 4;
+			}
 			.borders {
 				grid-column: 1 / 2;
 				grid-row: 2 / 4;
+			}
+			.main {
+			}
+			.aside {
+			}
+			.footer {
 			}
 		}
 	}

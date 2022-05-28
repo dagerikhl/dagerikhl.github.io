@@ -16,7 +16,6 @@
 
 <style lang="scss">
 	header {
-		grid-area: header;
 		position: sticky;
 		top: 0;
 		display: grid;
@@ -25,7 +24,6 @@
 		padding: 0 0.5rem;
 		background-color: var(--background-color-secondary);
 		box-shadow: var(--shadow-card);
-		z-index: 1000;
 
 		.avatar {
 			grid-area: avatar;

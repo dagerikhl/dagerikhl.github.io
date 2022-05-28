@@ -2,7 +2,6 @@
 
 <style lang="scss">
 	aside {
-		grid-area: aside;
 		padding: 1rem;
 	}
 </style>
