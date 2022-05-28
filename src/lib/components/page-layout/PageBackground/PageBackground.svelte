@@ -35,9 +35,6 @@
 
 <style lang="scss">
 	.container {
-		position: relative;
-		height: 100%;
-		width: 100%;
 		overflow: hidden;
 		pointer-events: none;
 		opacity: 0.7;

@@ -1,12 +1,15 @@
 @import "@fontsource/fira-mono";
-@import "$lib/style/variables/layout";
-@import "$lib/style/themes/dark";
-@import "$lib/style/themes/light";
+@import "./src/lib/style/variables/layout";
+@import "./src/lib/style/themes/dark";
+@import "./src/lib/style/themes/light";
 
 :root {
 	font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell,
 		"Open Sans", "Helvetica Neue", sans-serif;
 	--font-mono: "Fira Mono", monospace;
+
+	--main-padding: 1rem;
+	--main-side-padding: calc($borderContentWidth + 0.5rem);
 }
 
 body {

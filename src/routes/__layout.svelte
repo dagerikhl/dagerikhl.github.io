@@ -50,15 +50,22 @@
 			"header header"
 			"main aside"
 			"footer footer";
+		min-height: 100vh;
 
 		.header {
 			grid-area: header;
+
 			z-index: 20;
 		}
 		.background {
 			grid-column: 1 / 3;
 			grid-row: 2 / 3;
+
 			z-index: 10;
+
+			position: relative;
+			height: 100%;
+			width: 100%;
 		}
 		.borders {
 			grid-column: 1 / 3;
@@ -66,15 +73,24 @@
 			z-index: 30;
 		}
 		.main {
+			--main-padding: 1rem;
+			--main-side-padding: calc($borderContentWidth + 0.5rem);
+
 			grid-area: main;
+
 			z-index: 40;
+
+			padding: var(--main-padding) var(--main-side-padding) var(--main-padding)
+				var(--main-side-padding);
 		}
 		.aside {
 			grid-area: aside;
+
 			z-index: 40;
 		}
 		.footer {
 			grid-area: footer;
+
 			z-index: 50;
 		}
 	}
