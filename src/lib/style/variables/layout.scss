@@ -1,13 +1,12 @@
 @import "./screen";
 
-$borderWidth: 350px;
-$borderContentWidth: max(50px, 6vw);
-
 :root {
 	--header-height: 50px;
 	--footer-height: 200px;
 	--aside-size: 220px;
 	--main-height: minmax(calc(100vh - var(--header-height) - var(--footer-height)), auto);
+	--border-content-width: max(50px, 6vw);
+	--border-width: 350px;
 
 	@media screen and (max-width: $screenBig) {
 		--main-height: minmax(

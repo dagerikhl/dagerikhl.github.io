@@ -38,7 +38,6 @@
 </div>
 
 <style lang="scss">
-	@import "../lib/style/variables/layout";
 	@import "../lib/style/variables/screen";
 
 	.page {
@@ -74,7 +73,7 @@
 		}
 		.main {
 			--main-padding: 1rem;
-			--main-side-padding: calc($borderContentWidth + 0.5rem);
+			--main-side-padding: calc(var(--border-content-width) - 2rem);
 
 			grid-area: main;
 

@@ -27,9 +27,8 @@
 <style lang="scss">
 	@use "sass:math";
 
-	@import "../src/lib/style/variables/layout";
-
-	$slice: math.div($borderWidth, 1px);
+	// Keep in sync with --border-width, but without `px`
+	$slice: 350;
 
 	.border {
 		position: absolute;
@@ -37,13 +36,13 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
-		border: $borderContentWidth solid;
+		border: var(--border-content-width) solid;
 		pointer-events: none;
 	}
 
 	.right {
 		border-image-slice: 0 $slice 0 0;
-		border-image-width: 0 $borderContentWidth 0 0;
+		border-image-width: 0 var(--border-content-width) 0 0;
 
 		&.light {
 			border-image-source: url("$lib/assets/images/tree-layout/right-light.png");
@@ -55,7 +54,7 @@
 
 	.left {
 		border-image-slice: 0 0 0 $slice;
-		border-image-width: 0 0 0 $borderContentWidth;
+		border-image-width: 0 0 0 var(--border-content-width);
 
 		&.light {
 			border-image-source: url("$lib/assets/images/tree-layout/left-light.png");

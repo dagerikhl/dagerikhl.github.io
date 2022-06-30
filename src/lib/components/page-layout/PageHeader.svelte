@@ -15,15 +15,13 @@
 </header>
 
 <style lang="scss">
-	@import "../../style/variables/layout";
-
 	header {
 		position: sticky;
 		top: 0;
 		display: grid;
 		grid-template-columns: auto 1fr auto;
 		grid-template-areas: "avatar nav theme";
-		padding: 0 calc($borderContentWidth + 0.5rem);
+		padding: 0 calc(var(--border-content-width) + 0.5rem);
 		background-color: var(--background-color-secondary);
 		box-shadow: var(--shadow-card);
 
